@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "basketProduct")
+@Table(name = "basket_product")
 public class BasketProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +23,6 @@ public class BasketProduct {
     private Integer productCount;
     private BigDecimal totalPriceForProducts;
     @ManyToOne
-    @JoinColumn(name = "basketProduct")
+    @JoinColumn(name = "basket_product")
     private Basket basket;
 }
