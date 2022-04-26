@@ -20,7 +20,6 @@ public class BasketProduct {
     private Long id;
     private String productName;
     private BigDecimal productPrice;
-    private Integer productCount;
     private BigDecimal totalPriceForProducts;
     @ManyToOne
     @JoinColumn(name = "basket_product")
