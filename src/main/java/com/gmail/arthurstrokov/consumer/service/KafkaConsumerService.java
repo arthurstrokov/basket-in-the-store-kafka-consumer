@@ -22,9 +22,8 @@ public class KafkaConsumerService {
 
     @KafkaListener(topics = "basket")
     public void orderListener(ConsumerRecord<Long, Basket> consumerRecord) {
-        log.info(String.valueOf(consumerRecord.partition()));
-        log.info(String.valueOf(consumerRecord.key()));
-        log.info(String.valueOf(consumerRecord.value()));
+        log.info("message get, partition={}, offset={}", consumerRecord.partition(), consumerRecord.offset());
+        log.info("message get, key={}, value={}", consumerRecord.key(), consumerRecord.value());
 
         Basket basket = gson.fromJson(String.valueOf(consumerRecord.value()), Basket.class);
         log.info(String.valueOf(basket));
